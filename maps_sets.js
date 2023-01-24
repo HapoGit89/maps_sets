@@ -46,10 +46,10 @@ if (new Set(arr).size === arr.length) {
 const vowelCount = (str) => {
     const strArr = [...str]
     const reducedstrArr = strArr.reduce(function(acc, el){
-        if (!Object.keys(acc).some(function(e){ return e.toLocaleLowerCase() === e}) && "aeiou".includes(el.toLowerCase())){
+        if (!Object.keys(acc).some(function(e){ return el.toLowerCase() === e.toLowerCase()}) && "aeiou".includes(el.toLowerCase())){
             let charCount = 0
             strArr.forEach(function(char){
-                if (char.toLowerCase() === e.toLocaleLowerCase()) {charCount += 1}
+                if (char.toLowerCase() === el.toLowerCase()) {charCount += 1}
             })
             acc.set(el.toLowerCase(), charCount)
         }
